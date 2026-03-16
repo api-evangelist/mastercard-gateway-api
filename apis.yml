@@ -1,42 +1,50 @@
 aid: mastercard-gateway-api
+name: Mastercard Gateway API
+description: >-
+  The Mastercard Payment Gateway provides a robust, developer-friendly REST API
+  for integrating payment processing into applications. It supports a wide range
+  of payment methods, currencies, and transaction types for merchants and
+  payment service providers.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: >-
-
   https://raw.githubusercontent.com/api-evangelist/mastercard-gateway-api/refs/heads/main/apis.yml
+tags:
+  - Payments
+  - Credit Cards
+  - Payment Processing
+  - Gateway
+created: '2024-11-28'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
   - aid: mastercard-gateway-api:mastercard-gateway-api
     name: Mastercard Gateway API
     tags:
-      - API
-    humanURL: >-
-
-      https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
+      - Payments
+      - Gateway
+    humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
+    baseURL: https://ap-gateway.mastercard.com/api
     properties:
-      - url: >-
-
-          https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
+      - url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
         type: Documentation
-    description: |-
-
-      Understanding the Gateway API. Whether youre a coding maestro or just
-      starting out, our intuitive interface and robust API have been
-      meticulously crafted to ensure that integrating payments into your
-      applications is not only efficient but downright enjoyable.
-name: Mastercard Gateway API
-tags:
-  - Credit Cards
-  - Processing
-type: Contract
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-access: 3rd-Party
-created: '2024-11-28'
-modified: '2025-01-02'
-position: Consuming
-description: |-
-  Understanding the Gateway API. Whether youre a coding maestro or just starting
-  out, our intuitive interface and robust API have been meticulously crafted to
-  ensure that integrating payments into your applications is not only efficient
-  but downright enjoyable.
+      - type: Authentication
+        url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html
+    description: >-
+      The Mastercard Payment Gateway API provides a comprehensive interface for
+      integrating payments into applications, supporting multiple payment methods,
+      currencies, and transaction types for merchants worldwide.
+common:
+  - type: Portal
+    url: https://developer.mastercard.com/
+  - type: Sign Up
+    url: https://developer.mastercard.com/account/sign-up
+  - type: Login
+    url: https://developer.mastercard.com/account/log-in
+  - type: Support
+    url: https://developer.mastercard.com/support
+  - type: Terms of Service
+    url: https://developer.mastercard.com/terms-of-use
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
-specificationVersion: '0.19'
+    email: kin@apievangelist.com
