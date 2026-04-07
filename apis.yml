@@ -10,10 +10,10 @@ image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/mastercard-gateway-api/refs/heads/main/apis.yml
 tags:
-  - Payments
   - Credit Cards
-  - Payment Processing
   - Gateway
+  - Payment Processing
+  - Payments
 created: '2024-11-28'
 modified: '2026-03-16'
 specificationVersion: '0.19'
@@ -21,8 +21,8 @@ apis:
   - aid: mastercard-gateway-api:mastercard-gateway-api
     name: Mastercard Gateway API
     tags:
-      - Payments
       - Gateway
+      - Payments
     humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
     baseURL: https://ap-gateway.mastercard.com/api
     properties:
