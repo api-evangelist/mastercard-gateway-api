@@ -16,7 +16,7 @@ The Mastercard Payment Gateway provides a robust, developer-friendly REST API fo
 ## Timestamps
 
 - **Created:** 2024-11-28 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -34,6 +34,9 @@ The Mastercard Payment Gateway API provides a comprehensive interface for integr
 
 - [Documentation](https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html)
 - [Authentication](https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html)
+- [Versioning](https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/versioning.html)
+- [SDK](https://ap-gateway.mastercard.com/api/documentation/downloads.html)
+- [APIReference](https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html)
 
 ## Common Properties
 
