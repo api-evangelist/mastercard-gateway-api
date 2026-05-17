@@ -43,13 +43,13 @@ apis:
 common:
   - type: Portal
     url: https://developer.mastercard.com/
-  - type: Sign Up
+  - type: SignUp
     url: https://developer.mastercard.com/account/sign-up
   - type: Login
     url: https://developer.mastercard.com/account/log-in
   - type: Support
     url: https://developer.mastercard.com/support
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developer.mastercard.com/terms-of-use
 maintainers:
   - FN: Kin Lane
