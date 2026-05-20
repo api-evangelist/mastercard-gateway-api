@@ -41,6 +41,10 @@ apis:
       integrating payments into applications, supporting multiple payment methods,
       currencies, and transaction types for merchants worldwide.
 common:
+  - type: GitHubOrganization
+    url: https://github.com/Mastercard-Gateway
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/mastercardgateway
   - type: Portal
     url: https://developer.mastercard.com/
   - type: SignUp
