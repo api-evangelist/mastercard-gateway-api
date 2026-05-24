@@ -55,6 +55,8 @@ common:
     url: https://developer.mastercard.com/support
   - type: TermsOfService
     url: https://developer.mastercard.com/terms-of-use
+  - type: LLMsTxt
+    url: https://developer.mastercard.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
