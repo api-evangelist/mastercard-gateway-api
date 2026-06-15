@@ -1,0 +1,380 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Mastercard Payment Gateway REST API",
+    "version": "100"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Retrieve a transaction",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/order/:orderid/transaction/:transactionid",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "orderid",
+            "value": "",
+            "type": "path",
+            "description": "Merchant-supplied order identifier."
+          },
+          {
+            "name": "transactionid",
+            "value": "",
+            "type": "path",
+            "description": "Merchant-supplied transaction identifier within the order."
+          }
+        ]
+      },
+      "docs": "Retrieve a transaction"
+    },
+    {
+      "info": {
+        "name": "Submit a transaction on an order",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/order/:orderid/transaction/:transactionid",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "orderid",
+            "value": "",
+            "type": "path",
+            "description": "Merchant-supplied order identifier."
+          },
+          {
+            "name": "transactionid",
+            "value": "",
+            "type": "path",
+            "description": "Merchant-supplied transaction identifier within the order."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Single endpoint for the Transaction operation set. The action is\nchosen by the `apiOperation` field in the request body, e.g.\n`AUTHORIZE`, `PAY`, `CAPTURE`, `REFUND`, `VOID`, `VERIFY`,\n`STANDALONE_REFUND`, `ACCOUNT_FUNDING_TRANSACTION`.\n"
+    },
+    {
+      "info": {
+        "name": "Retrieve an order and all its transactions",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/order/:orderid",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "orderid",
+            "value": "",
+            "type": "path",
+            "description": "Merchant-supplied order identifier."
+          }
+        ]
+      },
+      "docs": "Retrieve an order and all its transactions"
+    },
+    {
+      "info": {
+        "name": "Create a session",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/session",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Creates a temporary, server-side container of request fields that\ncan be referenced by other Gateway requests (e.g. Hosted Checkout\nor Hosted Session).\n"
+    },
+    {
+      "info": {
+        "name": "Retrieve a session",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/session/:sessionId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "sessionId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a session"
+    },
+    {
+      "info": {
+        "name": "Update a session",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/session/:sessionId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "sessionId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a session"
+    },
+    {
+      "info": {
+        "name": "Create a payment token",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/token",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a payment token"
+    },
+    {
+      "info": {
+        "name": "Retrieve a payment token",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/token/:tokenId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "tokenId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a payment token"
+    },
+    {
+      "info": {
+        "name": "Create or update a payment token at a specific identifier",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/token/:tokenId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "tokenId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create or update a payment token at a specific identifier"
+    },
+    {
+      "info": {
+        "name": "Delete a payment token",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/token/:tokenId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "tokenId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a payment token"
+    },
+    {
+      "info": {
+        "name": "3-D Secure authentication operation",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/3DSecureId/:3DSecureId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "3DSecureId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "3-D Secure authentication operation"
+    },
+    {
+      "info": {
+        "name": "Hosted Checkout initiation helper",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/hostedCheckout",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Hosted Checkout initiation helper"
+    },
+    {
+      "info": {
+        "name": "Submit or close a batch of operations",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/batch/:batchId",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          },
+          {
+            "name": "batchId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Submit or close a batch of operations"
+    },
+    {
+      "info": {
+        "name": "Check the gateway availability",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://ap-gateway.mastercard.com/api/rest/version/100/merchant/:merchantId/gatewayStatus",
+        "params": [
+          {
+            "name": "merchantId",
+            "value": "",
+            "type": "path",
+            "description": "The merchant ID assigned to you by the gateway."
+          }
+        ]
+      },
+      "docs": "Check the gateway availability"
+    }
+  ],
+  "bundled": true
+}

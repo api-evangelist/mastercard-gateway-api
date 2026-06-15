@@ -1,0 +1,1758 @@
+{
+  "item": [
+    {
+      "id": "44fe8111-d8f5-458a-bada-b74e9274376f",
+      "name": "Submit a transaction on an order",
+      "request": {
+        "name": "Submit a transaction on an order",
+        "description": {
+          "content": "Single endpoint for the Transaction operation set. The action is\nchosen by the `apiOperation` field in the request body, e.g.\n`AUTHORIZE`, `PAY`, `CAPTURE`, `REFUND`, `VOID`, `VERIFY`,\n`STANDALONE_REFUND`, `ACCOUNT_FUNDING_TRANSACTION`.\n",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "order",
+            ":orderid",
+            "transaction",
+            ":transactionid"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "orderid",
+              "description": "(Required) Merchant-supplied order identifier."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "transactionid",
+              "description": "(Required) Merchant-supplied transaction identifier within the order."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"apiOperation\": \"<string>\",\n  \"order\": {\n    \"amount\": \"<string>\",\n    \"currency\": \"<string>\"\n  },\n  \"sourceOfFunds\": \"<object>\",\n  \"transaction\": \"<object>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b7336264-489b-41a3-814b-dacf66d019e8",
+          "name": "Transaction processed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "order",
+                ":orderid",
+                "transaction",
+                ":transactionid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderid",
+                  "description": "(Required) Merchant-supplied order identifier."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionid",
+                  "description": "(Required) Merchant-supplied transaction identifier within the order."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiOperation\": \"<string>\",\n  \"order\": {\n    \"amount\": \"<string>\",\n    \"currency\": \"<string>\"\n  },\n  \"sourceOfFunds\": \"<object>\",\n  \"transaction\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "cbae1b06-ec01-4e85-a7a1-e2851f50fe60",
+          "name": "Invalid request.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "order",
+                ":orderid",
+                "transaction",
+                ":transactionid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderid",
+                  "description": "(Required) Merchant-supplied order identifier."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionid",
+                  "description": "(Required) Merchant-supplied transaction identifier within the order."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiOperation\": \"<string>\",\n  \"order\": {\n    \"amount\": \"<string>\",\n    \"currency\": \"<string>\"\n  },\n  \"sourceOfFunds\": \"<object>\",\n  \"transaction\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "9f167d96-3989-446e-a31e-015d992bf170",
+          "name": "Authentication failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "order",
+                ":orderid",
+                "transaction",
+                ":transactionid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderid",
+                  "description": "(Required) Merchant-supplied order identifier."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionid",
+                  "description": "(Required) Merchant-supplied transaction identifier within the order."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiOperation\": \"<string>\",\n  \"order\": {\n    \"amount\": \"<string>\",\n    \"currency\": \"<string>\"\n  },\n  \"sourceOfFunds\": \"<object>\",\n  \"transaction\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "db103836-e30f-4fc9-9a2e-2b19a4e5bd57",
+      "name": "Retrieve a transaction",
+      "request": {
+        "name": "Retrieve a transaction",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "order",
+            ":orderid",
+            "transaction",
+            ":transactionid"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "orderid",
+              "description": "(Required) Merchant-supplied order identifier."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "transactionid",
+              "description": "(Required) Merchant-supplied transaction identifier within the order."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "357c8424-3841-4e8f-9873-1bfa0dacc5ca",
+          "name": "Transaction details.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "order",
+                ":orderid",
+                "transaction",
+                ":transactionid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderid",
+                  "description": "(Required) Merchant-supplied order identifier."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionid",
+                  "description": "(Required) Merchant-supplied transaction identifier within the order."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "db82b138-407e-4abc-91cf-0fcf8c69bd66",
+      "name": "Retrieve an order and all its transactions",
+      "request": {
+        "name": "Retrieve an order and all its transactions",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "order",
+            ":orderid"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "orderid",
+              "description": "(Required) Merchant-supplied order identifier."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7c871cb4-04ed-456d-b003-3b491ab3fe31",
+          "name": "Order details.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "order",
+                ":orderid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "orderid",
+                  "description": "(Required) Merchant-supplied order identifier."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "487d7ddd-ab69-4cad-a379-235868d6fd59",
+      "name": "Create a session",
+      "request": {
+        "name": "Create a session",
+        "description": {
+          "content": "Creates a temporary, server-side container of request fields that\ncan be referenced by other Gateway requests (e.g. Hosted Checkout\nor Hosted Session).\n",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "session"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "191ef2e2-3530-4b3f-bbf7-7149069730f4",
+          "name": "Session created.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "session"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3cf209c7-eb28-4380-bd0b-77e8b659cb35",
+      "name": "Update a session",
+      "request": {
+        "name": "Update a session",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "session",
+            ":sessionId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "sessionId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b77d3666-4d87-4523-b88b-cb38621272ee",
+          "name": "Session updated.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "session",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "70caa837-6ade-4beb-83ad-9d6b63bdeead",
+      "name": "Retrieve a session",
+      "request": {
+        "name": "Retrieve a session",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "session",
+            ":sessionId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "sessionId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f4876e9e-773b-4724-9c6d-ada6b645b931",
+          "name": "Session details.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "session",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3eec0d36-72c4-47b8-9c4c-702c8a8a915c",
+      "name": "Create a payment token",
+      "request": {
+        "name": "Create a payment token",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "token"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sourceOfFunds\": \"<object>\",\n  \"session\": \"<object>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "23d7f16a-7227-4e81-9715-e288833adf0e",
+          "name": "Token created.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sourceOfFunds\": \"<object>\",\n  \"session\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "dcc0294d-953e-4d9c-8379-d330effd12da",
+      "name": "Create or update a payment token at a specific identifier",
+      "request": {
+        "name": "Create or update a payment token at a specific identifier",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "token",
+            ":tokenId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "tokenId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "9bfd2bfc-1ddf-4d05-9838-e342e3528a48",
+          "name": "Token created or updated.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "token",
+                ":tokenId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "e83bc67e-b131-4852-829c-5882dc028cff",
+      "name": "Retrieve a payment token",
+      "request": {
+        "name": "Retrieve a payment token",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "token",
+            ":tokenId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "tokenId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "743521d1-2e0b-4170-bb13-64903fae2e18",
+          "name": "Token details.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "token",
+                ":tokenId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "60d368ce-c826-452d-9968-4b9a180e0f30",
+      "name": "Delete a payment token",
+      "request": {
+        "name": "Delete a payment token",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "token",
+            ":tokenId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "tokenId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e3e057cb-e240-47bf-84cc-5894907898df",
+          "name": "Token deleted.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "token",
+                ":tokenId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tokenId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "6412074e-3d8c-4727-9fba-6f71322140a8",
+      "name": "3-D Secure authentication operation",
+      "request": {
+        "name": "3-D Secure authentication operation",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "3DSecureId",
+            ":3DSecureId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "3DSecureId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"apiOperation\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "20128534-5416-44d0-98fd-d08c32f638a4",
+          "name": "3-D Secure operation result.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "3DSecureId",
+                ":3DSecureId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "3DSecureId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiOperation\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "bfe8a333-ed92-405a-ae71-15527715ca8a",
+      "name": "Hosted Checkout initiation helper",
+      "request": {
+        "name": "Hosted Checkout initiation helper",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "hostedCheckout"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "cd976f42-0404-4d0f-bea4-950e4bea946d",
+          "name": "Hosted Checkout context.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "hostedCheckout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "67daee20-852e-403b-b1dc-b6df007c2e1f",
+      "name": "Submit or close a batch of operations",
+      "request": {
+        "name": "Submit or close a batch of operations",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "batch",
+            ":batchId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "batchId",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "66248bc0-0ce4-4ba0-a9b3-0954b14a553b",
+          "name": "Batch processed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "batch",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batchId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "90d92442-0ae9-4423-99ce-f0764232e621",
+      "name": "Check the gateway availability",
+      "request": {
+        "name": "Check the gateway availability",
+        "description": {},
+        "url": {
+          "path": [
+            "merchant",
+            ":merchantId",
+            "gatewayStatus"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "merchantId",
+              "description": "(Required) The merchant ID assigned to you by the gateway."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "aca052b2-6890-4a31-9848-b2c61ac13c7a",
+          "name": "Gateway status.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "merchant",
+                ":merchantId",
+                "gatewayStatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "merchantId",
+                  "description": "(Required) The merchant ID assigned to you by the gateway."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ap-gateway.mastercard.com/api/rest/version/100",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d409450-00e3-4da0-85ee-2b77a3b3f2c7",
+    "name": "Mastercard Payment Gateway REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Mastercard Payment Gateway exposes a JSON REST API for processing\npayments, managing orders, and integrating hosted checkout, sessions,\ntokenization, 3-D Secure authentication, agreements, batches, and\nwallet operations. All transaction operations on an order use a single\nURL pattern parameterized by merchant, order, and transaction\nidentifiers; the specific operation (AUTHORIZE, PAY, CAPTURE, REFUND,\nVOID, VERIFY, etc.) is selected by the `apiOperation` body field.\n\n\nContact Support:\n Name: Mastercard Payment Gateway Services",
+      "type": "text/plain"
+    }
+  }
+}
