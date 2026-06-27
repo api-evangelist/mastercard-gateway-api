@@ -32,7 +32,7 @@ apis:
         url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html
       - type: Versioning
         url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/versioning.html
-      - type: SDK
+      - type: SDKs
         url: https://ap-gateway.mastercard.com/api/documentation/downloads.html
       - type: APIReference
         url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
@@ -47,7 +47,7 @@ common:
     url: https://www.linkedin.com/showcase/mastercardgateway
   - type: Portal
     url: https://developer.mastercard.com/
-  - type: SignUp
+  - type: Signup
     url: https://developer.mastercard.com/account/sign-up
   - type: Login
     url: https://developer.mastercard.com/account/log-in
@@ -55,7 +55,7 @@ common:
     url: https://developer.mastercard.com/support
   - type: TermsOfService
     url: https://developer.mastercard.com/terms-of-use
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.mastercard.com/llms.txt
 maintainers:
   - FN: Kin Lane
