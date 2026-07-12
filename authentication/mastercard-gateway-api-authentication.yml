@@ -1,0 +1,24 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/mastercard-gateway-api-openapi.yml
+summary:
+  types:
+  - http
+  - mutualTLS
+schemes:
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: |-
+    HTTP Basic authentication using `merchant.<merchantId>` as the
+    username and the API password (integration password) as the
+    password.
+  sources:
+  - openapi/mastercard-gateway-api-openapi.yml
+- name: CertificateAuth
+  type: mutualTLS
+  description: |-
+    Client-certificate (mutual TLS) authentication, available as an
+    alternative to password-based merchant authentication.
+  sources:
+  - openapi/mastercard-gateway-api-openapi.yml
