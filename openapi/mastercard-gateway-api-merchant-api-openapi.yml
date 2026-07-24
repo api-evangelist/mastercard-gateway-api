@@ -1,54 +1,76 @@
 openapi: 3.1.0
 info:
-  title: Mastercard Payment Gateway REST API
+  title: Mastercard Payment Gateway REST Merchant API
   version: '100'
-  description: |
-    The Mastercard Payment Gateway exposes a JSON REST API for processing
+  description: 'The Mastercard Payment Gateway exposes a JSON REST API for processing
+
     payments, managing orders, and integrating hosted checkout, sessions,
+
     tokenization, 3-D Secure authentication, agreements, batches, and
+
     wallet operations. All transaction operations on an order use a single
+
     URL pattern parameterized by merchant, order, and transaction
+
     identifiers; the specific operation (AUTHORIZE, PAY, CAPTURE, REFUND,
+
     VOID, VERIFY, etc.) is selected by the `apiOperation` body field.
+
+    '
   contact:
     name: Mastercard Payment Gateway Services
     url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
 servers:
-  - url: https://ap-gateway.mastercard.com/api/rest/version/100
-    description: Asia Pacific gateway
-  - url: https://{gateway_host}/api/rest/version/100
-    description: Regional or test gateway
-    variables:
-      gateway_host:
-        default: ap-gateway.mastercard.com
+- url: https://ap-gateway.mastercard.com/api/rest/version/100
+  description: Asia Pacific gateway
+- url: https://{gateway_host}/api/rest/version/100
+  description: Regional or test gateway
+  variables:
+    gateway_host:
+      default: ap-gateway.mastercard.com
 security:
-  - BasicAuth: []
-  - CertificateAuth: []
+- BasicAuth: []
+- CertificateAuth: []
+tags:
+- name: Merchant
 paths:
   /merchant/{merchantId}/order/{orderid}/transaction/{transactionid}:
     put:
       summary: Submit a transaction on an order
       operationId: transaction
-      description: |
-        Single endpoint for the Transaction operation set. The action is
+      description: 'Single endpoint for the Transaction operation set. The action is
+
         chosen by the `apiOperation` field in the request body, e.g.
+
         `AUTHORIZE`, `PAY`, `CAPTURE`, `REFUND`, `VOID`, `VERIFY`,
+
         `STANDALONE_REFUND`, `ACCOUNT_FUNDING_TRANSACTION`.
+
+        '
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - $ref: '#/components/parameters/OrderId'
-        - $ref: '#/components/parameters/TransactionId'
+      - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/OrderId'
+      - $ref: '#/components/parameters/TransactionId'
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [apiOperation]
+              required:
+              - apiOperation
               properties:
                 apiOperation:
                   type: string
-                  enum: [AUTHORIZE, PAY, CAPTURE, REFUND, VOID, VERIFY, STANDALONE_REFUND, ACCOUNT_FUNDING_TRANSACTION]
+                  enum:
+                  - AUTHORIZE
+                  - PAY
+                  - CAPTURE
+                  - REFUND
+                  - VOID
+                  - VERIFY
+                  - STANDALONE_REFUND
+                  - ACCOUNT_FUNDING_TRANSACTION
                 order:
                   type: object
                   properties:
@@ -69,36 +91,45 @@ paths:
           description: Invalid request.
         '401':
           description: Authentication failed.
+      tags:
+      - Merchant
     get:
       summary: Retrieve a transaction
       operationId: retrieveTransaction
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - $ref: '#/components/parameters/OrderId'
-        - $ref: '#/components/parameters/TransactionId'
+      - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/OrderId'
+      - $ref: '#/components/parameters/TransactionId'
       responses:
         '200':
           description: Transaction details.
+      tags:
+      - Merchant
   /merchant/{merchantId}/order/{orderid}:
     get:
       summary: Retrieve an order and all its transactions
       operationId: retrieveOrder
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - $ref: '#/components/parameters/OrderId'
+      - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/OrderId'
       responses:
         '200':
           description: Order details.
+      tags:
+      - Merchant
   /merchant/{merchantId}/session:
     post:
       summary: Create a session
       operationId: createSession
-      description: |
-        Creates a temporary, server-side container of request fields that
+      description: 'Creates a temporary, server-side container of request fields that
+
         can be referenced by other Gateway requests (e.g. Hosted Checkout
+
         or Hosted Session).
+
+        '
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/MerchantId'
       requestBody:
         required: false
         content:
@@ -108,17 +139,19 @@ paths:
       responses:
         '201':
           description: Session created.
+      tags:
+      - Merchant
   /merchant/{merchantId}/session/{sessionId}:
     put:
       summary: Update a session
       operationId: updateSession
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - in: path
-          name: sessionId
-          required: true
-          schema:
-            type: string
+      - $ref: '#/components/parameters/MerchantId'
+      - in: path
+        name: sessionId
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -128,25 +161,29 @@ paths:
       responses:
         '200':
           description: Session updated.
+      tags:
+      - Merchant
     get:
       summary: Retrieve a session
       operationId: retrieveSession
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - in: path
-          name: sessionId
-          required: true
-          schema:
-            type: string
+      - $ref: '#/components/parameters/MerchantId'
+      - in: path
+        name: sessionId
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Session details.
+      tags:
+      - Merchant
   /merchant/{merchantId}/token:
     post:
       summary: Create a payment token
       operationId: createToken
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/MerchantId'
       requestBody:
         required: true
         content:
@@ -161,13 +198,15 @@ paths:
       responses:
         '201':
           description: Token created.
+      tags:
+      - Merchant
   /merchant/{merchantId}/token/{tokenId}:
     put:
       summary: Create or update a payment token at a specific identifier
       operationId: createOrUpdateToken
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - $ref: '#/components/parameters/TokenId'
+      - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/TokenId'
       requestBody:
         required: true
         content:
@@ -177,55 +216,68 @@ paths:
       responses:
         '200':
           description: Token created or updated.
+      tags:
+      - Merchant
     get:
       summary: Retrieve a payment token
       operationId: retrieveToken
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - $ref: '#/components/parameters/TokenId'
+      - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/TokenId'
       responses:
         '200':
           description: Token details.
+      tags:
+      - Merchant
     delete:
       summary: Delete a payment token
       operationId: deleteToken
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - $ref: '#/components/parameters/TokenId'
+      - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/TokenId'
       responses:
         '200':
           description: Token deleted.
+      tags:
+      - Merchant
   /merchant/{merchantId}/3DSecureId/{3DSecureId}:
     put:
       summary: 3-D Secure authentication operation
       operationId: threeDSecure
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - in: path
-          name: 3DSecureId
-          required: true
-          schema:
-            type: string
+      - $ref: '#/components/parameters/MerchantId'
+      - in: path
+        name: 3DSecureId
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [apiOperation]
+              required:
+              - apiOperation
               properties:
                 apiOperation:
                   type: string
-                  enum: [INITIATE_AUTHENTICATION, AUTHENTICATE_PAYER, CHECK_3DS_ENROLLMENT, PROCESS_ACS_RESULT]
+                  enum:
+                  - INITIATE_AUTHENTICATION
+                  - AUTHENTICATE_PAYER
+                  - CHECK_3DS_ENROLLMENT
+                  - PROCESS_ACS_RESULT
       responses:
         '200':
           description: 3-D Secure operation result.
+      tags:
+      - Merchant
   /merchant/{merchantId}/hostedCheckout:
     post:
       summary: Hosted Checkout initiation helper
       operationId: hostedCheckoutInitiate
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/MerchantId'
       requestBody:
         required: true
         content:
@@ -235,17 +287,19 @@ paths:
       responses:
         '200':
           description: Hosted Checkout context.
+      tags:
+      - Merchant
   /merchant/{merchantId}/batch/{batchId}:
     put:
       summary: Submit or close a batch of operations
       operationId: batch
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
-        - in: path
-          name: batchId
-          required: true
-          schema:
-            type: string
+      - $ref: '#/components/parameters/MerchantId'
+      - in: path
+        name: batchId
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -255,24 +309,27 @@ paths:
       responses:
         '200':
           description: Batch processed.
+      tags:
+      - Merchant
   /merchant/{merchantId}/gatewayStatus:
     get:
       summary: Check the gateway availability
       operationId: checkGateway
       parameters:
-        - $ref: '#/components/parameters/MerchantId'
+      - $ref: '#/components/parameters/MerchantId'
       responses:
         '200':
           description: Gateway status.
+      tags:
+      - Merchant
 components:
   parameters:
-    MerchantId:
+    TokenId:
       in: path
-      name: merchantId
+      name: tokenId
       required: true
       schema:
         type: string
-      description: The merchant ID assigned to you by the gateway.
     OrderId:
       in: path
       name: orderid
@@ -287,22 +344,28 @@ components:
       schema:
         type: string
       description: Merchant-supplied transaction identifier within the order.
-    TokenId:
+    MerchantId:
       in: path
-      name: tokenId
+      name: merchantId
       required: true
       schema:
         type: string
+      description: The merchant ID assigned to you by the gateway.
   securitySchemes:
     BasicAuth:
       type: http
       scheme: basic
-      description: |
-        HTTP Basic authentication using `merchant.<merchantId>` as the
+      description: 'HTTP Basic authentication using `merchant.<merchantId>` as the
+
         username and the API password (integration password) as the
+
         password.
+
+        '
     CertificateAuth:
       type: mutualTLS
-      description: |
-        Client-certificate (mutual TLS) authentication, available as an
+      description: 'Client-certificate (mutual TLS) authentication, available as an
+
         alternative to password-based merchant authentication.
+
+        '
