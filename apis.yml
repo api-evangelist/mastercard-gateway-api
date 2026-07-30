@@ -6,7 +6,20 @@ description: >-
   of payment methods, currencies, and transaction types for merchants and
   payment service providers.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mastercard-gateway-api.png
 url: >-
   https://raw.githubusercontent.com/api-evangelist/mastercard-gateway-api/refs/heads/main/apis.yml
 tags:
@@ -18,28 +31,41 @@ created: '2024-11-28'
 modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
-  - aid: mastercard-gateway-api:mastercard-gateway-api
-    name: Mastercard Gateway API
-    tags:
-      - Gateway
-      - Payments
-    humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
-    baseURL: https://ap-gateway.mastercard.com/api
-    properties:
-      - url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
-        type: Documentation
-      - type: Authentication
-        url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html
-      - type: Versioning
-        url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/versioning.html
-      - type: SDKs
-        url: https://ap-gateway.mastercard.com/api/documentation/downloads.html
-      - type: APIReference
-        url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
-    description: >-
-      The Mastercard Payment Gateway API provides a comprehensive interface for
-      integrating payments into applications, supporting multiple payment methods,
-      currencies, and transaction types for merchants worldwide.
+- aid: mastercard-gateway-api:mastercard-gateway-api
+  name: Mastercard Gateway API
+  tags:
+  - Gateway
+  - Payments
+  humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
+  baseURL: https://ap-gateway.mastercard.com/api
+  properties:
+  - url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
+    type: Documentation
+  - type: Authentication
+    url: >-
+      https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html
+  - type: Versioning
+    url: >-
+      https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/versioning.html
+  - type: SDKs
+    url: https://ap-gateway.mastercard.com/api/documentation/downloads.html
+  - type: APIReference
+    url: >-
+      https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
+  description: >-
+    The Mastercard Payment Gateway API provides a comprehensive interface for integrating payments into
+    applications, supporting multiple payment methods, currencies, and transaction types for merchants
+    worldwide.
+- aid: mastercard-gateway-api:mastercard-gateway-api-merchant-api
+  name: Mastercard Gateway API Merchant API
+  description: The Merchant API from Mastercard Gateway API — 10 operation(s) for merchant.
+  humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
+  baseURL: https://ap-gateway.mastercard.com/api
+  tags:
+  - Merchant
+  properties:
+  - type: OpenAPI
+    url: openapi/mastercard-gateway-api-merchant-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/mastercard-gateway-api-agentic-access.yml
