@@ -1,0 +1,14 @@
+{
+  "provider": "mastercard-gateway-api",
+  "sources": [
+    "mastercard-gateway-api-merchant-api-openapi.yml"
+  ],
+  "outputs": [
+    "mastercard-gateway-api-merchant-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
