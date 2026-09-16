@@ -1,10 +1,8 @@
 aid: mastercard-gateway-api
 name: Mastercard Gateway API
-description: >-
-  The Mastercard Payment Gateway provides a robust, developer-friendly REST API
-  for integrating payment processing into applications. It supports a wide range
-  of payment methods, currencies, and transaction types for merchants and
-  payment service providers.
+description: The Mastercard Payment Gateway provides a robust, developer-friendly REST API for integrating
+  payment processing into applications. It supports a wide range of payment methods, currencies, and transaction
+  types for merchants and payment service providers.
 type: Index
 deliveryModel:
   model: saas
@@ -33,15 +31,14 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mastercard-gateway-api.png
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/mastercard-gateway-api/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/mastercard-gateway-api/refs/heads/main/apis.yml
 tags:
-  - Credit Cards
-  - Gateway
-  - Payment Processing
-  - Payments
+- Credit Cards
+- Gateway
+- Payment Processing
+- Payments
 created: '2024-11-28'
-modified: '2026-04-28'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: mastercard-gateway-api:mastercard-gateway-api
@@ -55,19 +52,15 @@ apis:
   - url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
     type: Documentation
   - type: Authentication
-    url: >-
-      https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html
+    url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAuthenticationMethod.html
   - type: Versioning
-    url: >-
-      https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/versioning.html
+    url: https://ap-gateway.mastercard.com/api/documentation/integrationGuidelines/versioning.html
   - type: SDKs
     url: https://ap-gateway.mastercard.com/api/documentation/downloads.html
   - type: APIReference
-    url: >-
-      https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
-  description: >-
-    The Mastercard Payment Gateway API provides a comprehensive interface for integrating payments into
-    applications, supporting multiple payment methods, currencies, and transaction types for merchants
+    url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/api.html
+  description: The Mastercard Payment Gateway API provides a comprehensive interface for integrating payments
+    into applications, supporting multiple payment methods, currencies, and transaction types for merchants
     worldwide.
 - aid: mastercard-gateway-api:mastercard-gateway-api-merchant-api
   name: Mastercard Gateway API Merchant API
@@ -80,28 +73,30 @@ apis:
   - type: OpenAPI
     url: openapi/mastercard-gateway-api-merchant-api-openapi.yml
 common:
-  - type: AgenticAccess
-    url: agentic-access/mastercard-gateway-api-agentic-access.yml
-  - type: DomainSecurity
-    url: security/mastercard-gateway-api-domain-security.yml
-  - type: Authentication
-    url: authentication/mastercard-gateway-api-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/Mastercard-Gateway
-  - type: LinkedIn
-    url: https://www.linkedin.com/showcase/mastercardgateway
-  - type: Portal
-    url: https://developer.mastercard.com/
-  - type: Signup
-    url: https://developer.mastercard.com/account/sign-up
-  - type: Login
-    url: https://developer.mastercard.com/account/log-in
-  - type: Support
-    url: https://developer.mastercard.com/support
-  - type: TermsOfService
-    url: https://developer.mastercard.com/terms-of-use
-  - type: LlmsText
-    url: https://developer.mastercard.com/llms.txt
+- type: Website
+  url: https://mastercard.com
+- type: AgenticAccess
+  url: agentic-access/mastercard-gateway-api-agentic-access.yml
+- type: DomainSecurity
+  url: security/mastercard-gateway-api-domain-security.yml
+- type: Authentication
+  url: authentication/mastercard-gateway-api-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/Mastercard-Gateway
+- type: LinkedIn
+  url: https://www.linkedin.com/showcase/mastercardgateway
+- type: Portal
+  url: https://developer.mastercard.com/
+- type: Signup
+  url: https://developer.mastercard.com/account/sign-up
+- type: Login
+  url: https://developer.mastercard.com/account/log-in
+- type: Support
+  url: https://developer.mastercard.com/support
+- type: TermsOfService
+  url: https://developer.mastercard.com/terms-of-use
+- type: LlmsText
+  url: https://developer.mastercard.com/llms.txt
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
