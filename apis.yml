@@ -34,6 +34,11 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mastercard
 url: https://raw.githubusercontent.com/api-evangelist/mastercard-gateway-api/refs/heads/main/apis.yml
 tags:
 - Credit Cards
+- Gateways
+- Payment Processing
+- Payments
+tags_raw:
+- Credit Cards
 - Gateway
 - Payment Processing
 - Payments
@@ -44,6 +49,9 @@ apis:
 - aid: mastercard-gateway-api:mastercard-gateway-api
   name: Mastercard Gateway API
   tags:
+  - Gateways
+  - Payments
+  tags_raw:
   - Gateway
   - Payments
   humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
@@ -68,6 +76,8 @@ apis:
   humanURL: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
   baseURL: https://ap-gateway.mastercard.com/api
   tags:
+  - Merchants
+  tags_raw:
   - Merchant
   properties:
   - type: OpenAPI
