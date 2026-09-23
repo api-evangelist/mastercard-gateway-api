@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Mastercard Payment Gateway REST Merchant API
   version: '100'
@@ -14,9 +14,7 @@ info:
 
     identifiers; the specific operation (AUTHORIZE, PAY, CAPTURE, REFUND,
 
-    VOID, VERIFY, etc.) is selected by the `apiOperation` body field.
-
-    '
+    VOID, VERIFY, etc.) is selected by the `apiOperation` body field.'
   contact:
     name: Mastercard Payment Gateway Services
     url: https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/index.html
@@ -44,9 +42,7 @@ paths:
 
         `AUTHORIZE`, `PAY`, `CAPTURE`, `REFUND`, `VOID`, `VERIFY`,
 
-        `STANDALONE_REFUND`, `ACCOUNT_FUNDING_TRANSACTION`.
-
-        '
+        `STANDALONE_REFUND`, `ACCOUNT_FUNDING_TRANSACTION`.'
       parameters:
       - $ref: '#/components/parameters/MerchantId'
       - $ref: '#/components/parameters/OrderId'
@@ -125,9 +121,7 @@ paths:
 
         can be referenced by other Gateway requests (e.g. Hosted Checkout
 
-        or Hosted Session).
-
-        '
+        or Hosted Session).'
       parameters:
       - $ref: '#/components/parameters/MerchantId'
       requestBody:
@@ -324,19 +318,6 @@ paths:
       - Merchant
 components:
   parameters:
-    TokenId:
-      in: path
-      name: tokenId
-      required: true
-      schema:
-        type: string
-    OrderId:
-      in: path
-      name: orderid
-      required: true
-      schema:
-        type: string
-      description: Merchant-supplied order identifier.
     TransactionId:
       in: path
       name: transactionid
@@ -351,6 +332,19 @@ components:
       schema:
         type: string
       description: The merchant ID assigned to you by the gateway.
+    TokenId:
+      in: path
+      name: tokenId
+      required: true
+      schema:
+        type: string
+    OrderId:
+      in: path
+      name: orderid
+      required: true
+      schema:
+        type: string
+      description: Merchant-supplied order identifier.
   securitySchemes:
     BasicAuth:
       type: http

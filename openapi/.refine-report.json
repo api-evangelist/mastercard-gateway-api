@@ -1,7 +1,7 @@
 {
   "provider": "mastercard-gateway-api",
   "sources": [
-    "mastercard-gateway-api-merchant-api-openapi.yml"
+    "_original/mastercard-gateway-api-openapi.yml"
   ],
   "outputs": [
     "mastercard-gateway-api-merchant-api-openapi.yml"
@@ -9,6 +9,27 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "mastercard-gateway-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "mastercard-gateway-api-openapi.yml: tagged paths PUT /merchant/{merchantId}/order/{orderid}/transaction/{transactionid} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths GET /merchant/{merchantId}/order/{orderid}/transaction/{transactionid} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths GET /merchant/{merchantId}/order/{orderid} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths POST /merchant/{merchantId}/session -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths PUT /merchant/{merchantId}/session/{sessionId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths GET /merchant/{merchantId}/session/{sessionId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths POST /merchant/{merchantId}/token -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths PUT /merchant/{merchantId}/token/{tokenId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths GET /merchant/{merchantId}/token/{tokenId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths DELETE /merchant/{merchantId}/token/{tokenId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths PUT /merchant/{merchantId}/3DSecureId/{3DSecureId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths POST /merchant/{merchantId}/hostedCheckout -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths PUT /merchant/{merchantId}/batch/{batchId} -> Merchant",
+    "mastercard-gateway-api-openapi.yml: tagged paths GET /merchant/{merchantId}/gatewayStatus -> Merchant",
+    "mastercard-gateway-api-openapi.yml: declared missing tag: Merchant",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "mastercard-gateway-api-merchant-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
