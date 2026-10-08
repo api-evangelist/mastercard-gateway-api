@@ -83,6 +83,12 @@ apis:
   - type: OpenAPI
     url: openapi/mastercard-gateway-api-merchant-api-openapi.yml
 common:
+- type: Plans
+  url: plans/mastercard-gateway-api-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/mastercard-gateway-api-rate-limits.yml
+- type: FinOps
+  url: finops/mastercard-gateway-api-finops.yml
 - type: Website
   url: https://mastercard.com
 - type: AgenticAccess
