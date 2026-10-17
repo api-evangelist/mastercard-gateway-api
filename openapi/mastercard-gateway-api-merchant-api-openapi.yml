@@ -318,20 +318,6 @@ paths:
       - Merchant
 components:
   parameters:
-    OrderId:
-      in: path
-      name: orderid
-      required: true
-      schema:
-        type: string
-      description: Merchant-supplied order identifier.
-    TransactionId:
-      in: path
-      name: transactionid
-      required: true
-      schema:
-        type: string
-      description: Merchant-supplied transaction identifier within the order.
     MerchantId:
       in: path
       name: merchantId
@@ -339,12 +325,26 @@ components:
       schema:
         type: string
       description: The merchant ID assigned to you by the gateway.
+    TransactionId:
+      in: path
+      name: transactionid
+      required: true
+      schema:
+        type: string
+      description: Merchant-supplied transaction identifier within the order.
     TokenId:
       in: path
       name: tokenId
       required: true
       schema:
         type: string
+    OrderId:
+      in: path
+      name: orderid
+      required: true
+      schema:
+        type: string
+      description: Merchant-supplied order identifier.
   securitySchemes:
     BasicAuth:
       type: http
